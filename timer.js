@@ -22,13 +22,10 @@ function startslist() {
   var startcount = getstarts.length;
   var times = document.getElementById("startlist");
   var classlist = document.getElementById("classlist").getElementsByTagName("li")[Number(startcount)].innerHTML;
-  if (classlist == "undefined") {
-    stop();
-  } else {
-    var entry = document.createElement("li");
-    entry.appendChild(document.createTextNode(classlist + ": " + new Date().getHours() + ":" + new Date().getMinutes()));
-    times.appendChild(entry);
-  }
+  var entry = document.createElement("li");
+  entry.appendChild(document.createTextNode(classlist + ": " + new Date().getHours() + ":" + new Date().getMinutes()));
+  times.appendChild(entry);
+
 }
 
 
