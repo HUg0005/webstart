@@ -1,0 +1,92 @@
+body {
+  background-color: beige;
+}
+
+div {
+  background: beige;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#input {
+  position: relative;
+}
+
+.center {
+  text-align: center;
+}
+
+.button {
+  font-size: 24px;
+  color: black;
+  border: 2px solid red;
+}
+
+.credits {
+  position: fixed;
+  bottom: 0;
+  float: right; 
+}
+
+@media only screen and (max-width: 768px) {
+  .centercontent {
+    font-size: xx-large;
+    position: relative;
+  }
+
+  .timelist {
+    list-style-type: none;
+    position: relative;
+    width: 100px;
+    min-height: 20px;
+    border: 1px solid red;
+  }
+
+  .start {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .stop {
+    position: absolute;
+  }
+
+  .buttondiv {
+    float: right;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .centercontent {
+    font-size: xx-large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -o-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+
+  .timelist {
+    list-style-type: none;
+    position: absolute;
+    width: 100px;
+    height: 85%;
+    border: 1px solid red;
+
+  }
+
+  .buttondiv {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    -o-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%);
+  }

@@ -1,0 +1,45 @@
+<!doctype html>
+<head>
+  <title>WebStart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div id="classlistdiv" class="centercontent">
+    <ol id="classlist"></ol>
+  </div>
+
+  <div id="timer" class="centercontent">
+    <h1 id="time" class="center"></h1>
+    <br>
+    <h1 id="difftime" class="center">00:00</h1>
+    <h1 id="flagtext" class="center">00:00 to NONE</h1>
+  </div>
+
+  <input type="time" id="starttime">
+  <button type="button" onclick="toggleclass();" class="button" id="centertoggle">Classes</button>
+
+  <div id="input">
+    <input type="checkbox" id="sixmin">6min start</input>
+    <input type="checkbox" id="onemin">1min gap</input>
+  </div>
+
+  <ol id="startlist" class="timelist"></ol>
+
+  <div id="timerbuttons" class="buttondiv">
+  <button type="button" onclick="timerloop = setInterval(timer, 100);" class="button">Start Timer</button>
+  <button type="button" onclick="clearInterval(timerloop);" class="button">Stop Timer</button>
+  </div>
+
+  <div id="classbuttons" class="buttondiv">
+    <button class="button" onclick="addstart();">Add Class</button>
+    <button class="button" onclick="delstart();">Remove Last Class</button>
+  </div>
+
+  <div class="credits">
+      <a href="https://github.com/HUg0005/webstart" target="_blank">GITHUB</a>
+  </div>
+
+  <script src="timer.js"></script>
+</body>
