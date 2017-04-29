@@ -32,8 +32,17 @@ function startslist() {
 function currenttime() {
   var ctime = new Date();
   var ch = ctime.getHours();
+  if (ch < 10) {
+  ch = "0" + ch
+  }
   var cm = ctime.getMinutes();
+  if (cm < 10) {
+  cm = "0" + cm
+  }
   var cs = ctime.getSeconds();
+  if (cs < 10) {
+  cs = "0" + cs
+  }
   document.getElementById("time").innerHTML = ch + ":" + cm + ":" + cs;
   if (cs === 55) {
     beep(1);
@@ -56,7 +65,13 @@ function timer() {
   var dm = parseInt(difftime/1000/60);
   var ds = parseInt(difftime/1000 % 60 + 1);
   if (ds === 60) {
-    ds = 0;
+    ds = "00";
+  }
+  else if (ds < 10) {
+    ds = "0" + ds
+  }
+  if (dm < 10) {
+    dm = "0" + dm
   }
   document.getElementById("difftime").innerHTML = dm + ":" + ds;
 
@@ -65,6 +80,12 @@ function timer() {
     var apdown = new Date(difftime - 359000);
     var apdownm = apdown.getMinutes();
     var apdowns = apdown.getSeconds();
+    if (apdowns < 10) {
+      apdowns = "0" + apdowns
+    }
+    if (apdownm < 10) {
+      apdownm = "0" + apdownm
+    }
     document.getElementById("flagtext").innerHTML = apdownm + ":" + apdowns + " to AP or General Recall Down";
 
     if (apdownm >= 1 && apdowns === 0 || apdownm === 0 && (apdowns === 30 || apdowns === 20 || apdowns <= 10)) {
@@ -78,6 +99,12 @@ function timer() {
     var classup = new Date(difftime - 299000);
     var classupm = classup.getMinutes();
     var classups = classup.getSeconds();
+    if (classups < 10) {
+      classups = "0" + classups
+    }
+    if (classupm < 10) {
+      classupm = "0" + classupm
+    }
     document.getElementById("flagtext").innerHTML = classupm + ":" + classups + " to Class Up";
     if (classupm >= 1 && classups === 0 || classupm === 0 && (classups === 30 || classups === 20 || classups <= 10)) {
       beep();
@@ -90,6 +117,12 @@ function timer() {
     var warningup = new Date(difftime - 239000);
     var warningupm = warningup.getMinutes();
     var warningups = warningup.getSeconds();
+    if (warningups < 10) {
+      warningups = "0" + warningups
+    }
+    if (warningupm < 10) {
+      warningupm = "0" + warningupm
+    }
     document.getElementById("flagtext").innerHTML = warningupm + ":" + warningups + " to Warning Up";
     if (warningups == 30 || warningups === 20 || warningups <= 10) {
       beep();
@@ -103,8 +136,14 @@ function timer() {
     var warningdown = new Date(difftime - 59000);
     var warningdownm = warningdown.getMinutes();
     var warningdowns = warningdown.getSeconds();
+    if (warningdowns < 10) {
+      warningdowns = "0" + warningdowns
+    }
+    if (warningdownm < 10) {
+      warningdownm = "0" + warningdownm
+    }
     document.getElementById("flagtext").innerHTML = warningdownm + ":" + warningdowns + " to Warning Down";
-    if (warningdowns === 0 || warningdownm === 0 &&(warningdowns == 30 || warningdowns === 20 || warningdowns <= 10)) {
+    if (warningdowns === "00" || warningdownm === "00" &&(warningdowns == 30 || warningdowns === 20 || warningdowns <= 10)) {
       beep();
       document.getElementById("flagtext").style.color = "red";
     } else {
@@ -115,7 +154,10 @@ function timer() {
   else if (dm < 1 && ds >= 0) {
     var start = new Date(difftime - 59000);
     var starts = start.getSeconds();
-    document.getElementById("flagtext").innerHTML = 0 + ":" + starts + " to Start";
+    if (starts < 10) {
+      starts = "0" + starts
+    }
+    document.getElementById("flagtext").innerHTML = "00" + ":" + starts + " to Start";
 
     if (starts == 30 || starts === 20 || starts <= 10) {
       beep();
@@ -124,7 +166,7 @@ function timer() {
       document.getElementById("flagtext").style.color = "black";
     }
   }
-  else if (ds < 0){
+  else if (ds < "00"){
     startslist();
   }
 }
