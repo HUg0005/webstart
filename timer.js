@@ -1,3 +1,17 @@
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    _paq.push(['setTrackerUrl',  'https://api-ecd1e201862b20ed9fc1c902e4b8f61f.haydenhughes.sandcats.io']);
+    _paq.push(['setSiteId', 1]);
+    _paq.push(['setApiToken', 'syM2lhEPvSbp4hx2Rwgk-RSfQl6kwXeqIEyIoF-9K6r']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://tr9uklzc2w5fodg28r5w.haydenhughes.sandcats.io/embed.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
 
 var currenttimeloop = setInterval(currenttime, 100);
 toggleclass();
