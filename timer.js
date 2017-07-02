@@ -137,7 +137,7 @@ function timer() {
     if (warningupm < 10) {
       warningupm = "0" + warningupm
     }
-    document.getElementById("flagtext").innerHTML = warningupm + ":" + warningups + " to Warning Up";
+    document.getElementById("flagtext").innerHTML = warningupm + ":" + warningups + " to Prep Up";
     if (warningups == 30 || warningups === 20 || warningups <= 10) {
       beep();
       document.getElementById("flagtext").style.color = "red";
@@ -156,7 +156,7 @@ function timer() {
     if (warningdownm < 10) {
       warningdownm = "0" + warningdownm
     }
-    document.getElementById("flagtext").innerHTML = warningdownm + ":" + warningdowns + " to Warning Down";
+    document.getElementById("flagtext").innerHTML = warningdownm + ":" + warningdowns + " to Prep Down";
     if (warningdowns === "00" || warningdownm === "00" &&(warningdowns == 30 || warningdowns === 20 || warningdowns <= 10)) {
       beep();
       document.getElementById("flagtext").style.color = "red";
