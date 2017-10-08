@@ -22,7 +22,9 @@ function startslist() {
   var times = document.getElementById("startlist");
   var classlist = document.getElementById("classlist").getElementsByTagName("li")[Number(startcount)].innerHTML;
   var entry = document.createElement("li");
-  entry.appendChild(document.createTextNode(classlist + ": " + document.getElementById("time").innerHTML));
+  var hour = (document.getElementById("starttime").value).split(":")[0]
+  var minute = (document.getElementById("starttime").value).split(":")[1]
+  entry.appendChild(document.createTextNode(classlist + ": " + hour + ":" + minute + ":" + "00");
   times.appendChild(entry);
 
 }
